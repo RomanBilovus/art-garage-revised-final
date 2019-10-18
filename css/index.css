@@ -251,6 +251,7 @@ header h1 {
 #contact .wrapper {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "map"
     "address"
@@ -277,11 +278,8 @@ header h1 {
 
 #contact iframe {
   grid-area: map;
-  width: 100%;
+  width: 282px;
   height: 100%;
-  border: 0;
-
-
 }
 
 #contact .wrapper img[src$=".svg"] {
@@ -298,7 +296,9 @@ header h1 {
       "address logo"
       "map map";
   }
-  
+  #contact iframe {
+  width: 100%;
+  }
   #contact h2 {
     margin-bottom: 0;
   }
@@ -337,7 +337,7 @@ header h1 {
 }
 
 #book .wrapper form label input {
-  width: 290px;
+  width: 280px;
   height: 30px;
   margin-bottom: 19px;
   border: 1px solid #000;
@@ -369,6 +369,8 @@ input[type="submit"]:hover {
   #book .wrapper img {
     max-width: 290px;
   }
+  #book .wrapper form label input {
+    width: 290px;
 }
 
 /*-------------section booking end---------*/
