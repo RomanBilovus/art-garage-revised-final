@@ -275,9 +275,13 @@ header h1 {
   grid-area: address;
 }
 
-#contact .wrapper [src="img/map.jpg"] {
+#contact iframe {
   grid-area: map;
-  max-width: 290px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+
+
 }
 
 #contact .wrapper img[src$=".svg"] {
@@ -294,9 +298,7 @@ header h1 {
       "address logo"
       "map map";
   }
-  #contact .wrapper img[src="img/map.jpg"] {
-    max-width: 100%;
-  }
+  
   #contact h2 {
     margin-bottom: 0;
   }
