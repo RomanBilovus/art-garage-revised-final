@@ -183,7 +183,7 @@ header h1 {
 #about img {
   border-radius: 5px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  max-height: 400px;
+  max-height: 385px;
   grid-area: img;
 }
 
@@ -278,7 +278,7 @@ header h1 {
 
 #contact iframe {
   grid-area: map;
-  width: 282px;
+  max-width: 257px;
   height: 100%;
 }
 
@@ -297,7 +297,7 @@ header h1 {
       "map map";
   }
   #contact iframe {
-  width: 100%;
+    min-width: 100%;
   }
   #contact h2 {
     margin-bottom: 0;
@@ -337,7 +337,7 @@ header h1 {
 }
 
 #book .wrapper form label input {
-  width: 280px;
+  width: 270px;
   height: 30px;
   margin-bottom: 19px;
   border: 1px solid #000;
@@ -345,7 +345,7 @@ header h1 {
 
 textarea {
   border: 1px solid #000;
-  min-width: 290px;
+  min-width: 265px;
   min-height: 190px;
   resize: none;
 }
@@ -368,11 +368,8 @@ input[type="submit"]:hover {
   }
   #book .wrapper img {
     max-width: 290px;
-  }
-  #book .wrapper form label input {
-    width: 290px;
-}
-
+   }
+ }
 /*-------------section booking end---------*/
 
 /*-------------footer start---------*/
