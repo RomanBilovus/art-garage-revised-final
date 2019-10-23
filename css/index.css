@@ -2,6 +2,7 @@
 
 :root {
   --main-color: #000;
+  --main-shadow: 1px 1px 2px #000, 0 0 1em #00ffff;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
   background: linear-gradient(180deg, #fff, #6c6c6c);
@@ -79,7 +80,7 @@ header img {
 }
 
 .mobile-nav li a:hover {
-  text-shadow: 1px 1px 2px #000, 0 0 1em #00ffff;
+  text-shadow: var(--main-shadow);
   padding-right: 5px;
 }
 
@@ -140,7 +141,7 @@ header h1 {
   }
 
   header nav ul li a:hover {
-    text-shadow: 1px 1px 2px #000, 0 0 1em #00ffff;
+    text-shadow: var(--main-shadow);
   }
 
   #home p:first-child {
@@ -183,7 +184,9 @@ header h1 {
 #about img {
   border-radius: 5px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  max-height: 385px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   grid-area: img;
 }
 
@@ -219,7 +222,7 @@ header h1 {
     grid-gap: 10px;
   }
   #about img {
-    max-height: 500px;
+    max-width: 380px;
   }
 }
 /*-------------section about end---------*/
@@ -243,6 +246,83 @@ header h1 {
 /*everything else is in an external file*/
 /*-------------section portfolio end---------*/
 
+/*-------------section team start---------*/
+#team {
+  padding: 10px;
+}
+
+#team h2 {
+  display: flex;
+  justify-content: center;
+}
+
+#team .artist {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "picture"
+    "description";
+  justify-items: center;
+}
+
+#team .artist img {
+  width: 100%;
+  max-width: 385px;
+  height: auto;
+  grid-area: picture;
+  border-radius: 5px;
+}
+
+#team .artist .artist-bio {
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  grid-area: description;
+}
+
+#team .artist .artist-bio p:first-child {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+#team .wrapper hr {
+  height: 5px;
+  background: radial-gradient(circle, #000000 25%, transparent 70%);
+  border: none;
+}
+
+@media (min-width: 750px) {
+  #team {
+    max-width: 900px;
+    margin: auto;
+  }
+
+  #team .artist:nth-of-type(2n + 1) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "picture description";
+    align-items: center;
+  }
+
+  #team .artist:nth-of-type(2n + 1) .artist-bio {
+    text-align: left;
+  }
+
+  #team .artist:nth-child(3) {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "description picture";
+    align-items: center;
+  }
+
+  #team .artist:nth-child(3) .artist-bio {
+    text-align: right;
+  }
+}
+/*-------------section team end---------*/
+
 /*-------------section contact start---------*/
 #contact h2 {
   text-align: center;
@@ -255,16 +335,17 @@ header h1 {
   grid-template-areas:
     "map"
     "address"
-    "logo";
+    "social-media";
   justify-items: center;
   align-items: center;
+  justify-content: center;
   padding: 10px;
 }
 
 #contact .wrapper .logo {
-  grid-area: logo;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 #contact .wrapper .logo a {
@@ -272,13 +353,19 @@ header h1 {
   color: var(--main-color);
 }
 
-.address {
+#contact .wrapper .address {
   grid-area: address;
+  text-align: center;
+}
+
+#contact .wrapper .social-media {
+  grid-area: social-media;
 }
 
 #contact iframe {
   grid-area: map;
-  max-width: 257px;
+  width: 100%;
+  max-width: 385px;
   height: 100%;
 }
 
@@ -293,7 +380,7 @@ header h1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
-      "address logo"
+      "address social-media"
       "map map";
   }
   #contact iframe {
@@ -306,9 +393,9 @@ header h1 {
 
 @media (min-width: 750px) {
   #contact .wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "map address logo";
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 276px;
+    grid-template-areas: "map address social-media";
   }
 }
 /*-------------section contact end---------*/
@@ -326,7 +413,8 @@ header h1 {
 }
 
 #book .wrapper img {
-  max-width: 250px;
+  width: 100%;
+  max-width: 270px;
   margin: 10px;
 }
 
@@ -353,13 +441,16 @@ textarea {
 input[type="submit"] {
   margin-top: 19px;
   color: #000;
-  background: #444;
+  background: rgb(145, 145, 145);
   border: 1px solid #000;
   transition: all linear 0.3s;
 }
 
 input[type="submit"]:hover {
-  color: #aaa;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: var(--main-shadow);
+  cursor: pointer;
 }
 
 @media (min-width: 603px) {
@@ -368,8 +459,8 @@ input[type="submit"]:hover {
   }
   #book .wrapper img {
     max-width: 290px;
-   }
- }
+  }
+}
 /*-------------section booking end---------*/
 
 /*-------------footer start---------*/

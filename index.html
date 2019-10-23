@@ -7,6 +7,7 @@
         <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
         <link rel="stylesheet" href="css/normalize.css"/>
         <link rel="stylesheet" href="css/slider.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
         <link rel="stylesheet" href="css/index.css"/>
         <title>ART Garage</title>
     </head>
@@ -56,7 +57,7 @@
                         </li>
                     </ul>
                 </nav>
-                <section id="home">
+                <section id="home" class="wow zoomInDown">
                     <p>Welcome To</p>
                     <h1>ART Garage</h1>
                     <p class="subheading">Your Best Tattoo Studio</p>
@@ -74,8 +75,7 @@
                        want, it is easy to find a sketch on the Internet, if there is only
                        an idea - then together with our artist you can design a sketch so
                        that you will be delighted. If you don't even have an idea and
-                       really want a tattoo - we always have sketches that our masters are
-                       ready to make for their own portfolio.
+                       really want a tattoo - we always have sketches that our masters are ready to make for their own portfolio.
                     </p>
                     <p>If you know what you want and know about tattoos - then welcome to
                        us. If you are still hesitant or worth it, it is certainly worth it.
@@ -117,6 +117,43 @@
                         <span class="dot" onclick="currentSlide(5)"></span>
                     </div>
                 </section>
+                <section id="team">
+                    <h2>OUR TEAM</h2>
+                    <div class="wrapper">
+                      <div class="artist">
+                        <img src="img/john.jpg" alt="tattoo artist John" />
+                        <div class="artist-bio wow slideInRight">
+                          <p>James Williams</p>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                          </p>
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="artist">
+                          <img src="img/emmy.jpg" alt="tattoo artist Emmy" />
+                          <div class="artist-bio wow slideInLeft">
+                            <p>Emmy Miller</p>
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="artist">
+                          <img src="img/brian.jpg" alt="tattoo artist Brian" />
+                          <div class="artist-bio wow slideInRight">
+                            <p>Brian Johnson</p>
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                          </div>
+                      </div>
+                    </div>
+                  </section>
                 <section id="contact">
                     <h2>FIND US</h2>
                     <div class="wrapper">
@@ -190,5 +227,7 @@
             </p>
         </footer>
     <script src="js/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
   </body>
 </html>
